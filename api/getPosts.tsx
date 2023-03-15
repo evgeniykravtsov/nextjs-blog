@@ -1,6 +1,5 @@
 import matter from "gray-matter";
 import fs from "fs";
-import PostCard from "@/components/PostCard";
 
 const getPosts = () => {
   const path = "posts/";
@@ -23,16 +22,4 @@ const getPosts = () => {
   return posts;
 };
 
-export default function Home() {
-  const posts = getPosts();
-
-  return (
-    <main>
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-        {posts.map((post) => (
-          <PostCard key={post.slug} {...post} />
-        ))}
-      </div>
-    </main>
-  );
-}
+export default getPosts;
